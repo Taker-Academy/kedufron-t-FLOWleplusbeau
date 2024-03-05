@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    background-color: #F2F2F2;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    width: 400px;
+}
+
+.footer-block *{
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-block {
+        width: 100%;
+        margin-bottom: 0;
+    }
+}

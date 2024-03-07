@@ -15,7 +15,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const addCartItemToContainer = (item, cart_container) => {
     const itemDiv = document.createElement('div',);
-    itemDiv.classList.add('item');
+    itemDiv.classList.add('cart-item');
     const titleElment = document.createElement('h4');
     const imgElement = document.createElement('img');
     const priceElement = document.createElement('p');

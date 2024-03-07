@@ -32,7 +32,7 @@ const addToCart = (item) => {
 
 const addItemToContainer = (item, item_container) => {
     const itemDiv = document.createElement('div',);
-    itemDiv.classList.add('cart-item');
+    itemDiv.classList.add('item');
     const titleElment = document.createElement('h4');
     const imgElement = document.createElement('img');
     const priceElement = document.createElement('p');

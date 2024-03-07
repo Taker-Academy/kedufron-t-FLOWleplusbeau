@@ -39,6 +39,30 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px 0 50px 50px;
+}
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #F2F2F2;
+    background-color: #fff;
+}
+
+.cart-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+}
 
 footer {
     display: flex;

@@ -14,16 +14,25 @@ const fetchData = async () => {
 // Define the cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Define the addToCart function
+// If the item is already in the cart, increase the amount
+// If the item is not in the cart, add it with an amount of 1
 const addToCart = (item) => {
-    cart.push(item);
+    const existingItem = cart.find(cartItem => cartItem.id === item._id);
+
+    if (existingItem) {
+
+        existingItem.amount += 1;
+    } else {
+        cart.push({ id: item._id, amount: 1 });
+    }
+
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log(cart);
 }
 
 const addItemToContainer = (item, item_container) => {
     const itemDiv = document.createElement('div',);
-    itemDiv.classList.add('item');
+    itemDiv.classList.add('cart-item');
     const titleElment = document.createElement('h4');
     const imgElement = document.createElement('img');
     const priceElement = document.createElement('p');

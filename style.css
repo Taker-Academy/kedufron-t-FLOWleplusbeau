@@ -66,8 +66,13 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
+
+    footer {
+        padding-bottom: 50px;
+    }
     .footer-container {
         flex-direction: column;
+        justify-content: center;
     }
 
     .footer-block {

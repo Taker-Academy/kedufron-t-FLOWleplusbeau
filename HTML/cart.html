@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>A'Mimir</title>
+    <title>A'Mimir cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <script src="https://kit.fontawesome.com/8c8e3ac87c.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -12,8 +12,17 @@
         <h1>A'Mimir</h1>
         <p>Les meilleurs doudous pour les meilleurs dodos</p>
     </header>
-    <div class="item-container">
-        <!-- items will be added here -->
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Mon panier</h2>
+        </div>
+        <div class="cart-items">
+            <!-- items will be added here -->
+        </div>
+        <div class="cart-total">
+            <h3>Total</h3>
+            <p>0€</p>
+        </div>
     </div>
     <footer>
         <div class="footer-container">
@@ -36,6 +45,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../js/cart.js"></script>
 </body>
 </html>

@@ -66,6 +66,7 @@ const addCartItemToContainer = (item, cartItem, cart_container) => {
             </div>
         </div>
     `;
+
     cart_container.appendChild(itemDiv);
 }
 

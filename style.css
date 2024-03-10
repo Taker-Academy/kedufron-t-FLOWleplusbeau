@@ -9,6 +9,7 @@ body {
 }
 
 header {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +18,19 @@ header {
     height: 100px;
     background-color: #226D68;
     color: white;
+}
+
+header a{
+    position: absolute;
+    right: 0;
+    color: white;
+    background-color: coral;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    margin-right: 100px;
+}
+header a:hover {
+    background-color: #FFA07A;
 }
 
 .item-container {
@@ -102,6 +116,17 @@ footer {
     header {
         position: sticky;
         top: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    header a {
+        position: relative;
+        margin-right: 0;
+    }
+
+    header p{
+        display: none;
     }
 
     footer {

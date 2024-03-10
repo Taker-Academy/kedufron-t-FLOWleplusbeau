@@ -18,6 +18,8 @@ const addToCart = (id) => {
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log(cart);
 }
+
+// get data from the api
 const fetchData = async () => {
     try {
         const response = await axios.get(apiUrl);
@@ -28,6 +30,7 @@ const fetchData = async () => {
     }
 }
 
+// Get the id of the product from the url
 function getProductID() {
     const urlParams = new URLSearchParams(window.location.search);
     let id = urlParams.get('id');
@@ -35,6 +38,7 @@ function getProductID() {
     return id;
 }
 
+// Get the product from the api with the id
 async function getProduct(id) {
     const data = await fetchData();
     let product;
@@ -46,13 +50,16 @@ async function getProduct(id) {
     });
     return product;
 }
+
+// Display the product in the html
 async function displayProduct(id) {
     const product = await getProduct(id);
     const productDiv = document.querySelector('.product-description');
+    productDiv.classList.add('product-container');
     productDiv.innerHTML = `
         <h4>${product.name}</h4>
         <img src="${apiUrl}picture/${product._id}" alt="${product.name}" />
-        <p>${product.price}</p>
+        <p>${product.price}€</p>
         <p>${product.description}</p>
         <button onclick="addToCart('${product._id}')">Ajouter au panier</button>
     `;

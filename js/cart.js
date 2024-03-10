@@ -1,5 +1,6 @@
 const apiUrl = 'https://api.kedufront.juniortaker.com/item/';
 
+// get data from the api
 const fetchData = async () => {
     try {
         const response = await axios.get(apiUrl);
@@ -13,6 +14,7 @@ const fetchData = async () => {
 // Define the cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+// Add 1 to the amount of the item in the cart
 const incrementAmount = (id) => {
     const item = cart.find(cartItem => cartItem.id === id);
     item.amount++;
@@ -20,6 +22,7 @@ const incrementAmount = (id) => {
     location.reload();
 }
 
+// Remove 1 to the amount of the item in the cart
 const decrementAmount = (id) => {
     const item = cart.find(cartItem => cartItem.id === id);
     if (item.amount > 1) {
@@ -29,6 +32,17 @@ const decrementAmount = (id) => {
     location.reload();
 }
 
+// Remove the item from the cart
+const removeItem = (id) => {
+    const itemDiv = document.getElementById(id);
+
+    cart = cart.filter(cartItem => cartItem.id !== id);
+    itemDiv.remove();
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(cart);
+}
+
+// Add the item to the cart container in html
 const addCartItemToContainer = (item, cartItem, cart_container) => {
     const itemDiv = document.createElement('div',);
     itemDiv.classList.add('cart-item');
@@ -55,15 +69,7 @@ const addCartItemToContainer = (item, cartItem, cart_container) => {
     cart_container.appendChild(itemDiv);
 }
 
-const removeItem = (id) => {
-    const itemDiv = document.getElementById(id);
-
-    cart = cart.filter(cartItem => cartItem.id !== id);
-    itemDiv.remove();
-    localStorage.setItem('cart', JSON.stringify(cart));
-    console.log(cart);
-}
-
+// Display the cart
 const DisplayCart = async () => {
     const data = await fetchData();
     let cart_container = document.querySelector('.cart-items');

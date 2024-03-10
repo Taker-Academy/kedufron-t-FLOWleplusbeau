@@ -253,6 +253,46 @@ header a:hover {
     font-size: 50px;
 }
 
+.product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px auto 50px auto;
+    width: 800px;
+    min-height: 60vh;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.product-container img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.product-container p {
+    font-size: 20px;
+}
+
+.product-container button {
+    width: 40%;
+    padding: 10px 20px 10px 20px;
+    background-color: coral;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.product-container button:hover {
+    background-color: #FFA07A;
+}
+
+.product-container button:active {
+    background-color: #FF4500;
+}
+
 footer {
     display: flex;
     width: 100%;

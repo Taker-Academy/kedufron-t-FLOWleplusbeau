@@ -61,7 +61,7 @@ const addCartItemToContainer = (item, cartItem, cart_container) => {
                 <button onclick="incrementAmount(${item._id})">+</button>
             </div>
             <div class="action-container">
-                <a href="html/product.html?id=${item._id}">Voir produit</a>
+                <a href="product.html?id=${item._id}">Voir produit</a>
                 <button onclick="removeItem(${item._id})">Enlever du panier</button>
             </div>
         </div>

@@ -107,15 +107,22 @@ header a:hover {
     justify-content: space-around;
     margin: 50px 0 50px 50px;
 }
+
 .cart-item {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 400px;
+    width: 500px;
     padding: 20px;
     border: 1px solid #F2F2F2;
     background-color: #fff;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
 }
 
 .cart-item img {
@@ -123,6 +130,31 @@ header a:hover {
     height: 200px;
     object-fit: contain;
     border-radius: 5px;
+}
+
+.amount-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.amount-container button {
+    width: 10%;
+    padding: 10px;
+    background-color: coral;
+    border: none;
+    border-radius: 10px;
+}
+
+.amount-container button:hover {
+    background-color: #FFA07A;
+}
+
+.amount-container button:active {
+    background-color: #FF4500;
 }
 
 footer {

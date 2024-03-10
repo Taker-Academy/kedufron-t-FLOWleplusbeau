@@ -13,19 +13,19 @@ const fetchData = async () => {
 // Define the cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-const addCartItemToContainer = (item, cart_container) => {
+const addCartItemToContainer = (item, cartItem, cart_container) => {
     const itemDiv = document.createElement('div',);
     itemDiv.classList.add('cart-item');
     const titleElment = document.createElement('h4');
     const imgElement = document.createElement('img');
     const priceElement = document.createElement('p');
 
-    titleElment.textContent = item.name;
-    imgElement.src = apiUrl + 'picture/' + item._id;
-    priceElement.textContent = item.price;
-    itemDiv.appendChild(imgElement);
-    itemDiv.appendChild(titleElment);
-    itemDiv.appendChild(priceElement);
+    itemDiv.innerHTML = `
+        <h4>${item.name}</h4>
+        <img src="${apiUrl}picture/${item._id}" alt="${item.name}" />
+        <p>${item.price}</p>
+        <p>${cartItem.amount}</p>
+    `;
     cart_container.appendChild(itemDiv);
 }
 
@@ -34,7 +34,7 @@ const DisplayCart = async () => {
     let cart_container = document.querySelector('.cart-items');
     cart.forEach(cartItem => {
         const item = data.find(item => item._id === cartItem.id);
-        addCartItemToContainer(item, cart_container);
+        addCartItemToContainer(item, cartItem, cart_container);
     });
 }
 

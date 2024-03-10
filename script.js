@@ -33,21 +33,15 @@ const addToCart = (item) => {
 const addItemToContainer = (item, item_container) => {
     const itemDiv = document.createElement('div',);
     itemDiv.classList.add('item');
-    const titleElment = document.createElement('h4');
-    const imgElement = document.createElement('img');
-    const priceElement = document.createElement('p');
-    const addToCartButton = document.createElement('button');
 
-    titleElment.textContent = item.name;
-    imgElement.src = apiUrl + 'picture/' + item._id;
-    priceElement.textContent = item.price;
-    addToCartButton.textContent = 'Add to Cart';
-    addToCartButton.addEventListener('click', () => addToCart(item));
-    itemDiv.appendChild(titleElment);
-    itemDiv.appendChild(imgElement);
-    itemDiv.appendChild(priceElement);
-    itemDiv.appendChild(addToCartButton);
+    itemDiv.innerHTML = `
+        <h4>${item.name}</h4>
+        <img src="${apiUrl}picture/${item._id}" alt="${item.name}" />
+        <p>${item.price}</p>
+        <button class="add-to-cart">Ajouter au Panier</button>
+    `;
     item_container.appendChild(itemDiv);
+    document.getElementsByClassName('add-to-cart').item(0).addEventListener('click', () => addToCart(item));
 }
 
 const DisplayItems = async () => {

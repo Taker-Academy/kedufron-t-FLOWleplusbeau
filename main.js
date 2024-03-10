@@ -36,9 +36,11 @@ const addItemToContainer = (item, item_container) => {
     itemDiv.innerHTML = `
         <h4>${item.name}</h4>
         <img src="${apiUrl}picture/${item._id}" alt="${item.name}" />
-        <p>${item.price}</p>
-        <a href="html/product.html?id=${item._id}">Voir produit</a>
-        <button onclick="addToCart(${item._id})">Ajouter au panier</button>
+        <p>${item.price}€</p>
+        <div class="action-container">
+            <a href="html/product.html?id=${item._id}">Voir produit</a>
+            <button onclick="addToCart(${item._id})">Ajouter au panier</button>
+        </div>
     `;
     item_container.appendChild(itemDiv);
 }

@@ -105,13 +105,26 @@ header a:hover {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 50px 0 50px 50px;
+    margin: 50px auto 50px auto;
+    width: 800px;
+}
+
+.cart-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #F2F2F2;
+    background-color: #fff;
 }
 
 .cart-item {
     display: flex;
     flex-direction: row;
-    width: 500px;
+    justify-content: space-around;
+    width: auto;
     padding: 20px;
     border: 1px solid #F2F2F2;
     background-color: #fff;
@@ -155,6 +168,28 @@ header a:hover {
 
 .amount-container button:active {
     background-color: #FF4500;
+}
+
+.cart-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #F2F2F2;
+    background-color: #fff;
+}
+
+.cart-footer a {
+    color: white;
+    background-color: coral;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+
+.cart-footer a:hover {
+    background-color: #FFA07A;
 }
 
 footer {

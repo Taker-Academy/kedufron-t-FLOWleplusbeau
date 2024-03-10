@@ -16,14 +16,14 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // If the item is already in the cart, increase the amount
 // If the item is not in the cart, add it with an amount of 1
-const addToCart = (item) => {
-    const existingItem = cart.find(cartItem => cartItem.id === item._id);
+const addToCart = (id) => {
+    const existingItem = cart.find(cartItem => cartItem.id === id);
 
     if (existingItem) {
 
         existingItem.amount += 1;
     } else {
-        cart.push({ id: item._id, amount: 1 });
+        cart.push({ id: id, amount: 1 });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -38,10 +38,9 @@ const addItemToContainer = (item, item_container) => {
         <h4>${item.name}</h4>
         <img src="${apiUrl}picture/${item._id}" alt="${item.name}" />
         <p>${item.price}</p>
-        <button class="add-to-cart">Ajouter au Panier</button>
+        <button onclick="addToCart(${item._id})">Ajouter au panier</button>
     `;
     item_container.appendChild(itemDiv);
-    document.getElementsByClassName('add-to-cart').item(0).addEventListener('click', () => addToCart(item));
 }
 
 const DisplayItems = async () => {

@@ -16,17 +16,25 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const addCartItemToContainer = (item, cartItem, cart_container) => {
     const itemDiv = document.createElement('div',);
     itemDiv.classList.add('cart-item');
-    const titleElment = document.createElement('h4');
-    const imgElement = document.createElement('img');
-    const priceElement = document.createElement('p');
+    itemDiv.setAttribute('id', item._id);
 
     itemDiv.innerHTML = `
         <h4>${item.name}</h4>
         <img src="${apiUrl}picture/${item._id}" alt="${item.name}" />
         <p>${item.price}</p>
         <p>${cartItem.amount}</p>
+        <button onclick="removeItem(${item._id})">Enlever du panier</button>
     `;
     cart_container.appendChild(itemDiv);
+}
+
+const removeItem = (id) => {
+    const itemDiv = document.getElementById(id);
+
+    cart = cart.filter(cartItem => cartItem.id !== id);
+    itemDiv.remove();
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(cart);
 }
 
 const DisplayCart = async () => {

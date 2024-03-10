@@ -25,7 +25,7 @@ document.getElementById('checkout-form').addEventListener('submit', function(eve
         .then(function(response) {
             console.log('Order successful:', response);
             localStorage.removeItem('cart');
-            window.location.href = 'confirmation.html';
+            window.location.href = 'comfirmation.html';
         })
         .catch(function(error) {
             console.error('Order failed:', error);

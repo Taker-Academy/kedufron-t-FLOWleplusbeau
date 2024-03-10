@@ -23,6 +23,7 @@ const addCartItemToContainer = (item, cartItem, cart_container) => {
         <img src="${apiUrl}picture/${item._id}" alt="${item.name}" />
         <p>${item.price}</p>
         <p>${cartItem.amount}</p>
+        <a href="html/product.html?id=${item._id}">Voir produit</a>
         <button onclick="removeItem(${item._id})">Enlever du panier</button>
     `;
     cart_container.appendChild(itemDiv);
@@ -41,8 +42,12 @@ const DisplayCart = async () => {
     const data = await fetchData();
     let cart_container = document.querySelector('.cart-items');
     cart.forEach(cartItem => {
-        const item = data.find(item => item._id === cartItem.id);
-        addCartItemToContainer(item, cartItem, cart_container);
+        const item = data.find(item => item._id.toString() === cartItem.id.toString());
+        if (item) {
+            addCartItemToContainer(item, cartItem, cart_container);
+        } else {
+            console.error(`No item found with id: ${cartItem.id}`);
+        }
     });
 }
 

@@ -1,4 +1,3 @@
-// Define the URL of the API you want to fetch data from
 const apiUrl = 'https://api.kedufront.juniortaker.com/item/';
 
 const fetchData = async () => {
@@ -38,6 +37,7 @@ const addItemToContainer = (item, item_container) => {
         <h4>${item.name}</h4>
         <img src="${apiUrl}picture/${item._id}" alt="${item.name}" />
         <p>${item.price}</p>
+        <a href="html/product.html?id=${item._id}">Voir produit</a>
         <button onclick="addToCart(${item._id})">Ajouter au panier</button>
     `;
     item_container.appendChild(itemDiv);

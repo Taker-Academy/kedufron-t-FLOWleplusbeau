@@ -237,6 +237,22 @@ header a:hover {
     background-color: #FF4500;
 }
 
+.confirm-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px auto 50px auto;
+    width: 800px;
+    min-height: 60vh;
+    background-color: #fff;
+}
+
+.confirm-container h2 {
+    margin-top: 50px;
+    font-size: 50px;
+}
+
 footer {
     display: flex;
     width: 100%;
